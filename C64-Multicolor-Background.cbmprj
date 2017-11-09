@@ -42,9 +42,20 @@
     <PaddingByte>0</PaddingByte>
     <SourceFiles>
         <SourceFile>
-            <Name>screen.sdd</Name>
+            <Name>app.asm</Name>
             <PrgName />
-            <FileType>9</FileType>
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>characters.cst</Name>
+            <PrgName />
+            <FileType>6</FileType>
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
@@ -53,9 +64,9 @@
             <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
-            <Name>characters.cst</Name>
+            <Name>screen.sdd</Name>
             <PrgName />
-            <FileType>6</FileType>
+            <FileType>9</FileType>
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
             <Breakpoints />
