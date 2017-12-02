@@ -43,9 +43,7 @@ CPYLOOP
         INY             ; WRITE UNTIL Y OVERFLOWS BACK TO ZERO
         BNE CPYLOOP
 
-        LDX $FD         ; INCREMENT ROM READ MSB
-        INX
-        STX $FD
+        INC $FD         ; INCREMENT ROM READ MSB
         LDX $FB         ; INCREMENT RAM WRITE MSB
         INX
         STX $FB
@@ -108,9 +106,7 @@ CPLOOP2
         INY             ; WRITE UNTIL Y OVERFLOWS BACK TO ZERO
         BNE CPLOOP2
 
-        LDX $FD         ; INCREMENT READ MSB
-        INX
-        STX $FD
+        INC $FD         ; INCREMENT READ MSB
         LDX $FB         ; INCREMENT WRITE MSB
         INX
         STX $FB
