@@ -13,9 +13,9 @@ BGCOLOR0        = $D021
 BGCOLOR1        = $D022
 BGCOLOR2        = $D023
 
-; TODO NOT READY :D
+SCRMEM          = $0400
 
-INIT    
+; TODO NOT READY :D
         ; DISABLED INTERRUPTS
         SEI
 
@@ -86,6 +86,40 @@ LDCHMAP LDA CHMAP,X
         INX
         CPX #32
         BNE LDCHMAP
+
+        ; LOAD SCREEN
+        ; DEFINE SCREEN RAM START $0400
+        LDA #$00
+        STA $FA
+        LDA #$04
+        STA $FB
+
+        ; DEFINE SCREEN DATA START
+        LDA #<SCREEN
+        STA $FC
+        LDA #>SCREEN
+        STA $FD
+
+        ; COPY SCREEN TO RAM
+        LDY #0          ; Y ACTS AS A READ/WRITE LSB OFFSET
+        LDX #0
+CPLOOP2
+        LDA ($FC),Y     ; READ BYTE (TO ADDRESS *FD+*FC+Y)
+        STA ($FA),Y     ; WRITE BYTE (TO ADDRESS *FB+*FA+Y)
+        INY             ; WRITE UNTIL Y OVERFLOWS BACK TO ZERO
+        BNE CPLOOP2
+
+        LDX $FD         ; INCREMENT READ MSB
+        INX
+        STX $FD
+        LDX $FB         ; INCREMENT WRITE MSB
+        INX
+        STX $FB
+        CPX #$0C        ; KEEP COPYING UNTIL AT THE END
+        BNE CPLOOP2
+
+        LDA #$60        ; FIRST CHARACTER IS NOT CORRECT, WHY?
+        STA $0400       ; HACK TO FIX IT
 
         ; MAIN LOOP
 LOOP    JMP LOOP
