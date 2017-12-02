@@ -15,7 +15,6 @@ BGCOLOR2        = $D023
 
 SCRMEM          = $0400
 
-; TODO NOT READY :D
         ; DISABLED INTERRUPTS
         SEI
 
