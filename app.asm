@@ -110,11 +110,8 @@ CPLOOP2
         LDX $FB         ; INCREMENT WRITE MSB
         INX
         STX $FB
-        CPX #$0C        ; KEEP COPYING UNTIL AT THE END
+        CPX #$08        ; KEEP COPYING UNTIL AT THE END
         BNE CPLOOP2
-
-        LDA #$20        ; FIRST CHARACTER IS NOT CORRECT, WHY?
-        STA $0400       ; HACK TO FIX IT
 
         ; MAIN LOOP
 LOOP    JMP LOOP

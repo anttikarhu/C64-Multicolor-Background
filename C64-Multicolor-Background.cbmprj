@@ -47,13 +47,9 @@
             <FileType>2</FileType>
             <IncludeInBuild>True</IncludeInBuild>
             <Regions />
-            <Breakpoints>
-                <Breakpoint>103</Breakpoint>
-                <BreakpointDetails>True;0;0;2;0;False;103;False;0</BreakpointDetails>
-                <Enabled>True</Enabled>
-            </Breakpoints>
+            <Breakpoints />
             <Bookmarks />
-            <Topmost>False</Topmost>
+            <Topmost>True</Topmost>
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
