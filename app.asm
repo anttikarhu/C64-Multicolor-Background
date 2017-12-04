@@ -77,6 +77,7 @@ CPYLOOP
         ; RE-ENABLE INTERRUPTS
         CLI
 
+        ; LOAD CUSTOM CHARACTER SET
         LDX #0
 LDCHMAP LDA CHMAP,X
         STA CHMAPMEM,X
@@ -99,19 +100,23 @@ LDCHMAP LDA CHMAP,X
 
         ; COPY SCREEN TO RAM
         LDY #0          ; Y ACTS AS A READ/WRITE LSB OFFSET
-        LDX #0
 CPLOOP2
         LDA ($FC),Y     ; READ BYTE (TO ADDRESS *FD+*FC+Y)
         STA ($FA),Y     ; WRITE BYTE (TO ADDRESS *FB+*FA+Y)
-        INY             ; WRITE UNTIL Y OVERFLOWS BACK TO ZERO
+
+        LDX $FB         ; READ UNTIL AT THE END OF SCREEN RAM ($07E7)
+        CPX #$07
+        BNE CONTCPY     ; (NOT AT THE LAST CHUNK OF 256 BYTES)
+        CPY #$E7
+        BEQ CPYEND      ; COPY DONE
+
+CONTCPY INY             ; WRITE UNTIL Y OVERFLOWS BACK TO ZERO
         BNE CPLOOP2
 
         INC $FD         ; INCREMENT READ MSB
-        LDX $FB         ; INCREMENT WRITE MSB
-        INX
-        STX $FB
-        CPX #$08        ; KEEP COPYING UNTIL AT THE END
-        BNE CPLOOP2
+        INC $FB         ; INCREMENT WRITE MSB
+        JMP CPLOOP2     ; KEEP COPYING
+CPYEND
 
         ; MAIN LOOP
 LOOP    JMP LOOP
