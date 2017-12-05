@@ -59,4 +59,17 @@
       <data>85</data>
     </chardata>
   </character>
+  <character>
+    <charcode>4</charcode>
+    <chardata>
+      <data>60</data>
+      <data>60</data>
+      <data>255</data>
+      <data>195</data>
+      <data>195</data>
+      <data>255</data>
+      <data>60</data>
+      <data>60</data>
+    </chardata>
+  </character>
 </charset>
