@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <charset>
   <FileVersion>2</FileVersion>
-  <BK1>07</BK1>
+  <BK1>b7</BK1>
   <BK2>17</BK2>
-  <Col3>37</Col3>
+  <Col3>07</Col3>
   <Reversed>False</Reversed>
-  <Multicolour>True</Multicolour>
+  <Multicolour>False</Multicolour>
   <Uppercase>True</Uppercase>
   <character>
     <charcode>0</charcode>
@@ -70,6 +70,58 @@
       <data>255</data>
       <data>60</data>
       <data>60</data>
+    </chardata>
+  </character>
+  <character>
+    <charcode>5</charcode>
+    <chardata>
+      <data>85</data>
+      <data>85</data>
+      <data>85</data>
+      <data>247</data>
+      <data>255</data>
+      <data>85</data>
+      <data>85</data>
+      <data>85</data>
+    </chardata>
+  </character>
+  <character>
+    <charcode>6</charcode>
+    <chardata>
+      <data>85</data>
+      <data>85</data>
+      <data>85</data>
+      <data>245</data>
+      <data>127</data>
+      <data>93</data>
+      <data>85</data>
+      <data>85</data>
+    </chardata>
+  </character>
+  <character>
+    <charcode>7</charcode>
+    <chardata>
+      <data>85</data>
+      <data>85</data>
+      <data>245</data>
+      <data>127</data>
+      <data>93</data>
+      <data>85</data>
+      <data>85</data>
+      <data>85</data>
+    </chardata>
+  </character>
+  <character>
+    <charcode>8</charcode>
+    <chardata>
+      <data>34</data>
+      <data>170</data>
+      <data>170</data>
+      <data>234</data>
+      <data>90</data>
+      <data>86</data>
+      <data>116</data>
+      <data>88</data>
     </chardata>
   </character>
 </charset>

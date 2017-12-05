@@ -35,9 +35,44 @@
       <data>0</data>
     </sdata>
    </sprite>
+  <sprite>
+    <description></description>
+    <links></links>
+    <include>True</include>
+    <multi>False</multi>
+    <spbkgnd>1</spbkgnd>
+    <spcolour>0</spcolour>
+    <mcolour1>0</mcolour1>
+    <mcolour2>1</mcolour2>
+    <expandx>False</expandx>
+    <expandy>False</expandy>
+    <sdata>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>2796202</data>
+      <data>1398100</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+      <data>0</data>
+    </sdata>
+   </sprite>
     <!-- Scratchpad data -->
     <ScratchpadData>
-        <MaxSprites>0</MaxSprites>
+        <MaxSprites>2</MaxSprites>
         <Cell>A</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
@@ -66,6 +101,7 @@
         <Cell>A</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
+        <Cell>A0020000000000099;0010000000000099;</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
@@ -90,8 +126,7 @@
         <Cell>A</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
-        <Cell>A</Cell>
-        <Cell>A</Cell>
+        <Cell>A0020000000000099;</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
         <Cell>A</Cell>
