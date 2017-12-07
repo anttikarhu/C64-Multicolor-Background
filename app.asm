@@ -254,7 +254,39 @@ LDSPR1  LDA SPR1,X
         BNE LDSPR1
 
         ; MAIN LOOP
-LOOP    JMP LOOP
+LOOP    
+        LDX #255 ; WAIT A BIT
+        LDY #10
+WAIT    DEX
+        BNE WAIT
+        DEY
+        BNE WAIT
+        
+        ; MOVE FIRST CAR + SHADOW
+        LDX SPR0_X
+        DEX
+        STX SPR0_X
+        STX SPR2_X
+        CPX #255
+        BNE NEXT1
+        LDA #%00000101
+        EOR SPR_MSBX
+        STA SPR_MSBX
+NEXT1
+         ; MOVE SECOND CAR + SHADOW
+        LDX SPR1_X
+        DEX
+        DEX
+        STX SPR1_X
+        STX SPR3_X
+        CPX #254
+        BNE NEXT2
+        LDA #%00001010
+        EOR SPR_MSBX
+        STA SPR_MSBX
+NEXT2
+
+        JMP LOOP
 
 CHMAP   BYTE    $55,$55,$55,$55,$55,$55,$55,$55
         BYTE    $55,$AA,$AA,$AA,$55,$55,$55,$55
