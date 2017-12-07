@@ -272,8 +272,14 @@ WAIT    DEX
         LDA #%00000101
         EOR SPR_MSBX
         STA SPR_MSBX
+
+        ; CHANGE FIRST CAR COLOR WHEN OFF SCREEN
+        AND #%00000101
+        CMP #%00000101
+        BNE NEXT1
+        INC SPR0_COLOR
 NEXT1
-         ; MOVE SECOND CAR + SHADOW
+        ; MOVE SECOND CAR + SHADOW
         LDX SPR1_X
         DEX
         DEX
@@ -284,6 +290,12 @@ NEXT1
         LDA #%00001010
         EOR SPR_MSBX
         STA SPR_MSBX
+
+        ; CHANGE SECOND CAR COLOR WHEN OFF SCREEN
+        AND #%00001010
+        CMP #%00001010
+        BNE NEXT2
+        INC SPR1_COLOR
 NEXT2
 
         JMP LOOP
